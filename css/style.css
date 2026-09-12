@@ -143,6 +143,27 @@ nav a:hover {
     margin-bottom: 8px;
 }
 
+.member-image {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background-color: #f8f1c9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.member-image p {
+    color: #606c38;
+    font-size: 14px;
+}
+
+.member-card h4 {
+    color: #606c38;
+    margin-bottom: 10px;
+}
 
 /* ==================== PROJECTS SECTION ==================== */
 
