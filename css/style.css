@@ -131,11 +131,18 @@ nav a:hover {
 }
 
 .member-card {
-    background-color: white;
-    border: 2px solid #606c38;
-    padding: 25px;
-    width: 220px;
-    border-radius: 8px;
+  background-color: white;
+  border: 2px solid #606c38;
+  padding: 25px;
+  width: 220px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.member-card:hover {
+  transform: translateY(-12px) scale(1.04);
+  box-shadow: 0 14px 28px rgba(40, 54, 24, 0.28);
 }
 
 .member-card h3 {
