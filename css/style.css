@@ -208,24 +208,24 @@ nav a:hover {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
-    max-width: 950px;
+    max-width: 700px;
     margin: auto;
 }
 
 .contact-card {
     padding: 28px 22px;
-    background: #ffffff;
-    border: 1px solid #e2e2e2;
-    border-radius: 18px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    border: 2px solid #606c38;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(40, 54, 24, 0.08);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .contact-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 14px 30px rgba(10, 102, 194, 0.15);
+    box-shadow: 0 14px 28px rgba(40, 54, 24, 0.28);
 }
 
 .member-avatar {
@@ -235,43 +235,51 @@ nav a:hover {
     height: 62px;
     margin: 0 auto 14px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #0a66c2, #55a8f5);
-    color: white;
+    background-color: #606c38;
+    color: #f8f1c9;
     font-size: 19px;
     font-weight: bold;
 }
 
 .contact-card h3 {
     margin: 0 0 14px;
+    color: #283618;
 }
 
 .contact-link {
     display: block;
     margin-bottom: 16px;
-    color: #555;
+    color: #606c38;
     text-decoration: none;
     overflow-wrap: anywhere;
 }
 
 .contact-link:hover {
-    color: #0a66c2;
+    color: #283618;
+    text-decoration: underline;
 }
 
 .linkedin-button {
     display: inline-block;
     padding: 10px 16px;
-    border-radius: 8px;
-    background: #0a66c2;
+    border-radius: 5px;
+    background-color: #606c38;
     color: white;
     font-weight: bold;
     text-decoration: none;
-    transition: background 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .linkedin-button:hover {
-    background: #004182;
+    background-color: #283618;
 }
 
+/* One card per row on small phone screens */
+@media (max-width: 600px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* ==================== FOOTER ==================== */
 
