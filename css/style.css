@@ -223,6 +223,47 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+/* Resume and Personal Portfolio Links */
+
+.member-links {
+    margin-top: 22px;
+    padding-top: 12px;
+    position: relative;
+    text-align: center;
+}
+
+/* Short centered line */
+.member-links::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    background-color: #a3b18a;
+    margin: 0 auto 12px;
+}
+
+/* Links on separate lines */
+.member-links a {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+    color: #606c38;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.member-links a:hover {
+    color: #283618;
+    text-decoration: underline;
+}
+
+.member-links .external-icon {
+    margin-left: 4px;
+    color: #606c38;
+}
+
+
+
 /* ==================== PROJECTS SECTION ==================== */
 
 .project-container {
