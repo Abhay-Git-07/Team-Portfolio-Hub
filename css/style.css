@@ -14,43 +14,74 @@ body {
 }
 
 
-/* ==================== HEADER ==================== */
+/* ==================== HEADER & NAVIGATION ==================== */
 
 header {
-    background-color: #283618;
-    color: white;
-    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(40, 54, 24, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .header-container {
-    max-width: 1100px;
+    max-width: 1160px;
     margin: auto;
+    padding: 14px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header h1 {
-    font-size: 24px;
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    transition: var(--transition);
 }
 
+.logo-icon {
+    font-size: 1.35rem;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
 
-/* ==================== NAVIGATION ==================== */
+.logo strong {
+    color: var(--accent-pale);
+    font-weight: 800;
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
 
 nav {
     display: flex;
-    gap: 20px;
+    align-items: center;
+    gap: 8px;
 }
 
-nav a {
-    color: #f8f1c9;
+.nav-link {
+    color: #f1f4ea;
     text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: var(--radius-full);
+    transition: var(--transition);
 }
 
-nav a:hover {
-    color: #a3b18a;
+.nav-link:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.14);
 }
-
 
 /* ==================== HOME SECTION ==================== */
 
@@ -533,6 +564,14 @@ nav a:hover {
     align-items: center;
 }
 
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
 .member-image p {
     color: #606c38;
     font-size: 14px;
@@ -542,6 +581,47 @@ nav a:hover {
     color: #606c38;
     margin-bottom: 10px;
 }
+
+/* Resume and Personal Portfolio Links */
+
+.member-links {
+    margin-top: 22px;
+    padding-top: 12px;
+    position: relative;
+    text-align: center;
+}
+
+/* Short centered line */
+.member-links::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    background-color: #a3b18a;
+    margin: 0 auto 12px;
+}
+
+/* Links on separate lines */
+.member-links a {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+    color: #606c38;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.member-links a:hover {
+    color: #283618;
+    text-decoration: underline;
+}
+
+.member-links .external-icon {
+    margin-left: 4px;
+    color: #606c38;
+}
+
+
 
 /* ==================== PROJECTS SECTION ==================== */
 
@@ -569,10 +649,88 @@ nav a:hover {
 /* ==================== CONTACT SECTION ==================== */
 
 #contact {
-    background-color: #a3b18a;
-    max-width: none;
+    text-align: center;
 }
 
+.contact-intro {
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.contact-card {
+    padding: 28px 22px;
+    background-color: white;
+    border: 2px solid #606c38;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(40, 54, 24, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 28px rgba(40, 54, 24, 0.28);
+}
+
+.member-avatar {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background-color: #606c38;
+    color: #f8f1c9;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.contact-card h3 {
+    margin: 0 0 14px;
+    color: #283618;
+}
+
+.contact-link {
+    display: block;
+    margin-bottom: 16px;
+    color: #606c38;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.contact-link:hover {
+    color: #283618;
+    text-decoration: underline;
+}
+
+.linkedin-button {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 5px;
+    background-color: #606c38;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.linkedin-button:hover {
+    background-color: #283618;
+}
+
+/* One card per row on small phone screens */
+@media (max-width: 600px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* ==================== FOOTER ==================== */
 
