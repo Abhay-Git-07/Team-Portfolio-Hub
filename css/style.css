@@ -410,6 +410,8 @@ nav {
     padding: 75px 6%;
     box-sizing: border-box;
     background: #fff;
+}
+
 .node-avatar {
     position: relative;
     width: 54px;
@@ -631,6 +633,8 @@ nav {
     grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.42fr);
     gap: 48px;
     align-items: start;
+}
+
 .about-section h2::after {
     content: "";
     display: block;
