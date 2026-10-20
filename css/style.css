@@ -87,44 +87,373 @@ nav a:hover {
 
 /* ==================== ABOUT SECTION ==================== */
 
-.about-section h2 {
-    font-size: 34px;
+.about-section {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 75px 6%;
+    box-sizing: border-box;
+    background: #fff;
     color: #283618;
-    margin-bottom: 10px;
 }
 
-/* Line below heading */
-.about-section h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #606c38;
-    margin: 10px auto 20px;
+.about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.42fr);
+    gap: 48px;
+    align-items: start;
 }
 
-.about-section .section-intro {
-    font-size: 18px;
-    font-weight: bold;
+/* LEFT COLUMN */
+
+.about-left {
+    min-width: 0;
+}
+
+.about-label {
+    display: inline-block;
     color: #606c38;
-    margin-bottom: 25px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    margin-bottom: 22px;
 }
 
-.about-text {
-    max-width: 850px;
-    margin: 0 auto 18px;
+.about-main-title {
+    color: #283618;
+    font-size: clamp(32px, 3.2vw, 47px);
+    font-weight: 800;
+    line-height: 1.24;
+    letter-spacing: -1.2px;
+    margin: 0 0 24px;
+}
+
+.about-description {
+    color: #6a6d61;
+    font-size: 17px;
+    line-height: 1.9;
+    margin: 0 0 32px;
+}
+
+/* PROJECT OVERVIEW CARD */
+
+.project-overview {
+    padding: 27px 25px;
+    background: #f8f6ed;
+    border: 1px solid #e8e5d7;
+    border-radius: 18px;
+    box-shadow: 0 5px 16px rgba(40, 54, 24, 0.045);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-overview:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(40, 54, 24, 0.09);
+}
+
+.project-overview > h3 {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #394627;
+    padding-bottom: 17px;
+    margin: 0 0 21px;
+    border-bottom: 1px solid #e4e1d5;
+}
+
+.overview-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 21px;
+}
+
+.overview-item:last-child {
+    margin-bottom: 0;
+}
+
+.overview-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    font-size: 21px;
+    border-radius: 12px;
+    background: #eeeddf;
+}
+
+.overview-item h4 {
+    color: #394627;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin: 0 0 5px;
+}
+
+.overview-item p {
+    color: #73766a;
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+/* RIGHT COLUMN */
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    min-width: 0;
+}
+
+/* INFORMATION CARDS */
+
+.about-info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+    padding: 28px 29px;
+    background: #fff;
+    border: 1px solid #e9e9e3;
+    border-radius: 19px;
+    box-shadow: 0 4px 15px rgba(40, 54, 24, 0.045);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.about-info-card:hover {
+    transform: translateY(-4px);
+    border-color: #d5dbc7;
+    box-shadow: 0 12px 27px rgba(40, 54, 24, 0.085);
+}
+
+.info-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 59px;
+    height: 59px;
+    font-size: 28px;
+    background: #f2f3ed;
+    border-radius: 17px;
+}
+
+.info-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.about-info-card h3 {
+    color: #283618;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.45;
+    margin: 0 0 10px;
+}
+
+.about-info-card p {
+    color: #6a6d61;
+    font-size: 16px;
+    line-height: 1.85;
+    margin: 0;
+}
+
+/* FEATURED EXPERIENCE CARD */
+
+.about-info-card.experience-card {
+    display: block;
+    padding: 30px 33px;
+    background: #fdfcf7;
+    border-left: 5px solid #606c38;
+}
+
+.experience-card .about-label {
+    margin-bottom: 15px;
+}
+
+.about-info-card.experience-card h3 {
+    font-size: clamp(21px, 2vw, 27px);
+    margin-bottom: 13px;
+}
+
+/* FULL-WIDTH VISION BANNER */
+
+.about-mantra {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px 30px;
+    margin-top: 32px;
+    background: linear-gradient(120deg, #e9ecdf, #f6f6eb);
+    border: 1px solid #dfe3d1;
+    border-radius: 17px;
+}
+
+.mantra-icon {
+    flex-shrink: 0;
+    font-size: 27px;
+}
+
+.about-mantra p {
+    flex: 1;
+    margin: 0;
+    color: #4f5346;
+    font-size: 16px;
     line-height: 1.8;
 }
 
-.about-text strong {
+.about-mantra strong {
     color: #283618;
 }
 
-.about-highlight {
-    background-color: #a3b18a;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 25px;
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .about-section {
+        padding: 60px 4%;
+    }
+
+    .about-layout {
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 28px;
+    }
+
+    .about-info-card {
+        gap: 17px;
+        padding: 24px 21px;
+    }
+
+    .about-info-card.experience-card {
+        padding: 26px 24px;
+    }
+
+    .info-icon {
+        width: 49px;
+        height: 49px;
+        font-size: 25px;
+    }
+
+    .about-info-card h3 {
+        font-size: 18px;
+    }
+
+    .about-info-card p {
+        font-size: 15px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+    .about-section {
+        padding: 48px 20px;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-main-title {
+        font-size: clamp(32px, 8vw, 42px);
+    }
+
+    .about-description {
+        font-size: 16px;
+    }
+
+    .project-overview {
+        padding: 24px 20px;
+    }
+
+    .about-right {
+        gap: 17px;
+    }
+
+    .about-info-card {
+        gap: 15px;
+        padding: 23px 19px;
+    }
+
+    .about-info-card.experience-card {
+        padding: 25px 21px;
+    }
+
+    .about-info-card h3 {
+        font-size: 18px;
+    }
+
+    .about-info-card p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .info-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 23px;
+        border-radius: 12px;
+    }
+
+    .about-mantra {
+        gap: 12px;
+        padding: 21px 17px;
+        margin-top: 28px;
+    }
+
+    .about-mantra p {
+        font-size: 14px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+    .about-section {
+        padding: 40px 15px;
+    }
+
+    .about-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .about-main-title {
+        font-size: 31px;
+    }
+
+    .about-info-card {
+        padding: 20px 15px;
+    }
+
+    .about-info-card.experience-card {
+        padding: 22px 17px;
+    }
+
+    .project-overview {
+        padding: 22px 16px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .about-section *,
+    .about-section *::before,
+    .about-section *::after {
+        transition: none !important;
+    }
+
+    .about-section *:hover {
+        transform: none;
+    }
 }
 
 
@@ -162,7 +491,6 @@ nav a:hover {
 .section-intro {
     margin-bottom: 30px;
 }
-
 
 /* ==================== TEAM SECTION ==================== */
 
