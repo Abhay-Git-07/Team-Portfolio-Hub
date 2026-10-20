@@ -7,6 +7,9 @@
 
     <title>Team Portfolio Hub</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -36,26 +39,113 @@
 
     <main>
 
-        <!-- ==================== HOME SECTION ==================== -->
-
+                <!-- ==================== HOME SECTION ==================== -->
         <section id="home" class="home-section">
+            <div class="home-container">
+                <div class="hero-text-col">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Welcome to Our Personal Portfolio Website</span>
+                    </div>
 
-            <div class="home-content">
+                    <h2>We Learn, Build<br><span class="highlight-text">and Grow Together.</span></h2>
 
-                <p class="subtitle">WELCOME TO OUR PORTFOLIO</p>
+                    <p class="hero-desc">
+                        We are a passionate student team that turns ideas into creative projects
+                        through learning, collaboration, and code.
+                    </p>
 
-                <h2>Building. Learning. Creating.</h2>
+                    <div class="hero-actions">
+                        <a href="#team" class="button button-primary">Meet the Team <span aria-hidden="true">➜</span></a>
+                    </div>
+                </div>
 
-                <p>
-                    We are a team of students working together to build
-                    a portfolio that represents our skills, projects,
-                    and learning journey.
-                </p>
+                <div class="hero-orbit-col">
+                    <div class="orbit-wrapper" title="Hover to pause orbit">
+                        <div class="orbit-glow-disc"></div>
 
-                <a href="#team" class="button">Meet Our Team</a>
+                        <div class="orbit-system">
+                            <div class="orbit-track">
+                                <a href="#team" class="orbit-node node-ac" aria-label="Abhay Chauhan - Project Lead">
+                                    <div class="node-avatar">
+                                        <img src="assets/images/team/abhay-chauhan.jpeg" alt="Abhay Chauhan">
+                                        <span class="node-initials">AC</span>
+                                    </div>
+                                    <div class="node-tooltip tooltip-top">
+                                        <span class="tooltip-name">Abhay Chauhan</span>
+                                        <span class="tooltip-role">Project Lead &amp; Frontend</span>
+                                    </div>
+                                </a>
 
+                                <a href="#team" class="orbit-node node-aa" aria-label="Aakhya Agarwal - UI/UX Designer">
+                                    <div class="node-avatar">
+                                        <img src="assets/images/team/aakhya-agarwal.png" alt="Aakhya Agarwal">
+                                        <span class="node-initials">AA</span>
+                                    </div>
+                                    <div class="node-tooltip tooltip-right">
+                                        <span class="tooltip-name">Aakhya Agarwal</span>
+                                        <span class="tooltip-role">UI/UX Designer</span>
+                                    </div>
+                                </a>
+
+                                <a href="#team" class="orbit-node node-ag" aria-label="Aastha Gupta - Content Developer">
+                                    <div class="node-avatar">
+                                        <img src="assets/images/team/aastha-gupta.png" alt="Aastha Gupta">
+                                        <span class="node-initials">AG</span>
+                                    </div>
+                                    <div class="node-tooltip tooltip-bottom">
+                                        <span class="tooltip-name">Aastha Gupta</span>
+                                        <span class="tooltip-role">Content Developer</span>
+                                    </div>
+                                </a>
+
+                                <a href="#team" class="orbit-node node-am" aria-label="Abhay Mishra - Testing and Documentation">
+                                    <div class="node-avatar">
+                                        <img src="assets/images/team/abhay-mishra.jpeg" alt="Abhay Mishra">
+                                        <span class="node-initials">AM</span>
+                                    </div>
+                                    <div class="node-tooltip tooltip-left">
+                                        <span class="tooltip-name">Abhay Mishra</span>
+                                        <span class="tooltip-role">Testing &amp; Documentation</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="orbit-center">
+                                <div class="center-pulse-ring"></div>
+                                <div class="center-core">
+                                    <span class="center-label">TEAM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
+
+            <!-- Team Stats Strip: positioned below the hero and orbit -->
+
+            <div class="stats-strip">
+                <div class="stat-item">
+                    <h3>04</h3>
+                    <p>Team Members</p>
+                </div>
+
+                <div class="stat-divider"></div>
+
+                <div class="stat-item">
+                    <h3>01</h3>
+                    <p>Shared Vision</p>
+                </div>
+
+                <div class="stat-divider"></div>
+
+                <div class="stat-item">
+                    <h3>∞</h3>
+                    <p>Learning Together</p>
+                </div>
+            </div>
         </section>
 
 
