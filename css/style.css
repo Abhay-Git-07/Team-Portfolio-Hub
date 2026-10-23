@@ -1120,25 +1120,246 @@ nav {
     color: #606c38;
 }
 
-/* ==================== PROJECTS SECTION ==================== */
-.project-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+/* ========================================
+   PROJECTS SECTION
+======================================== */
+
+.section-projects {
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid rgba(96, 108, 56, 0.12);
+    border-bottom: 1px solid rgba(96, 108, 56, 0.12);
 }
 
-.project-card {
-    background-color: white;
-    border: 1px solid #a3b18a;
-    padding: 25px;
-    width: 280px;
-    border-radius: 8px;
+.section-projects .section-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 85px 24px;
 }
 
-.project-card h3 {
+
+/* Section Heading */
+
+.section-projects .section-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-projects .section-tag {
+    display: inline-block;
+    color: #606c38;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-projects .section-header h2 {
     color: #283618;
-    margin-bottom: 8px;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.section-projects .section-intro {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #56614c;
+    line-height: 1.7;
+}
+
+
+/* Project Grid */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    align-items: stretch;
+}
+
+
+/* Project Cards */
+
+.section-projects .project-card {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    background: #ffffff;
+    border: 1px solid rgba(96, 108, 56, 0.18);
+    border-radius: 20px;
+
+    box-shadow: 0 2px 8px rgba(32, 44, 19, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.section-projects .project-card:hover {
+    transform: translateY(-7px);
+    border-color: #a3b18a;
+    box-shadow: 0 15px 30px rgba(32, 44, 19, 0.12);
+}
+
+
+/* Card Header */
+
+.project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 17px;
+
+    background: #f3efe1;
+    border-bottom: 1px solid rgba(96, 108, 56, 0.12);
+}
+
+.window-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.window-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.window-dots .dot.red {
+    background: #ff5f56;
+}
+
+.window-dots .dot.yellow {
+    background: #ffbd2e;
+}
+
+.window-dots .dot.green {
+    background: #27c93f;
+}
+
+/* Card Body */
+
+.project-card-body {
+    flex-grow: 1;
+    padding: 26px 22px 22px;
+}
+
+.project-icon {
+    font-size: 2rem;
+    margin-bottom: 13px;
+}
+
+.section-projects .project-card-body h3 {
+    color: #1e2913;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.section-projects .project-card-body p {
+    color: #56614c;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+}
+
+
+/* Technology Tags */
+
+.section-projects .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.section-projects .tag {
+    padding: 5px 10px;
+
+    background: #fbf8ed;
+    border: 1px solid rgba(96, 108, 56, 0.18);
+    border-radius: 8px;
+
+    color: #283618;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+
+/* Card Footer */
+
+.project-card-footer {
+    padding: 16px 22px;
+    background: rgba(244, 239, 226, 0.4);
+    border-top: 1px solid rgba(96, 108, 56, 0.12);
+}
+
+.section-projects .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #606c38;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 800;
+
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.section-projects .project-link:hover {
+    color: #283618;
+    transform: translateX(4px);
+}
+
+
+/* Tablet */
+
+@media (max-width: 960px) {
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 620px) {
+    .section-projects .section-container {
+        padding: 55px 18px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .section-projects .section-header {
+        margin-bottom: 32px;
+    }
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+    .section-projects .project-card,
+    .section-projects .project-link {
+        transition: none;
+    }
+
+    .section-projects .project-card:hover,
+    .section-projects .project-link:hover {
+        transform: none;
+    }
 }
 
 /* ==================== CONTACT SECTION ==================== */
