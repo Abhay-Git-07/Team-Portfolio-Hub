@@ -1029,96 +1029,230 @@ nav {
 }
 
 /* ==================== TEAM SECTION ==================== */
-.team-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+
+```css
+/* ==================== TEAM SECTION ==================== */
+
+.section-team {
+    background-color: var(--bg-team);
+    background-image:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(163, 177, 138, 0.22) 0%,
+            transparent 40%
+        );
 }
 
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 26px;
+    align-items: stretch;
+}
+
+/* Member Card */
+
 .member-card {
-    background-color: white;
-    border: 2px solid #606c38;
-    padding: 25px;
-    width: 220px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 32px 22px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.member-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        var(--accent-light),
+        var(--accent)
+    );
+
+    opacity: 0;
+    transition: var(--transition);
 }
 
 .member-card:hover {
-    transform: translateY(-12px) scale(1.04);
-    box-shadow: 0 14px 28px rgba(40, 54, 24, 0.28);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-light);
 }
 
-.member-card h3 {
-    color: #283618;
-    margin-bottom: 8px;
+.member-card:hover::before {
+    opacity: 1;
 }
 
-.member-image {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 15px;
+/* Circular Profile Photo */
+
+.member-image-wrapper {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 18px;
     border-radius: 50%;
-    background-color: #f8f1c9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 4px;
+
+    background: linear-gradient(
+        135deg,
+        var(--accent-light),
+        var(--accent)
+    );
+
+    box-shadow: 0 6px 16px rgba(40, 54, 24, 0.15);
 }
 
-.member-image img {
+.member-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
     border-radius: 50%;
+    background-color: var(--bg-home);
+    display: block;
+    transition: transform 0.4s ease;
 }
 
-.member-image p {
-    color: #606c38;
-    font-size: 14px;
+.member-card:hover .member-img {
+    transform: scale(1.06);
 }
 
-.member-card h4 {
-    color: #606c38;
+/* No green status indicator */
+
+/* Member Name */
+
+.member-card h3 {
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
+/* Role Badge */
+
+.role-badge {
+    display: inline-block;
+    background: rgba(163, 177, 138, 0.22);
+    color: var(--primary-dark);
+    border: 1px solid rgba(96, 108, 56, 0.2);
+    border-radius: var(--radius-full);
+    padding: 7px 12px;
+    margin-bottom: 16px;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Member Description */
+
+.member-bio {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+/* Resume and Portfolio Buttons */
+
 .member-links {
-    margin-top: 22px;
-    padding-top: 12px;
-    position: relative;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: auto;
 }
 
-.member-links::before {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 1px;
-    background-color: #a3b18a;
-    margin: 0 auto 12px;
-}
+.link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
 
-.member-links a {
-    display: block;
-    width: fit-content;
-    margin: 10px auto;
-    color: #606c38;
+    padding: 10px 14px;
+    border-radius: var(--radius-full);
+
+    background: var(--bg-card-subtle);
+    color: var(--primary-dark);
+    border: 1px solid var(--border-subtle);
+
+    font-size: 0.82rem;
+    font-weight: 600;
     text-decoration: none;
-    font-size: 16px;
+
+    transition: var(--transition);
 }
 
-.member-links a:hover {
-    color: #283618;
-    text-decoration: underline;
+.link-btn:hover {
+    background: var(--accent-light);
+    border-color: var(--accent);
+    transform: translateY(-2px);
 }
 
-.member-links .external-icon {
-    margin-left: 4px;
-    color: #606c38;
+.link-btn-accent {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
 }
+
+.link-btn-accent:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: #ffffff;
+}
+
+.external-icon {
+    font-size: 0.9rem;
+    transition: transform 0.25s ease;
+}
+
+.link-btn:hover .external-icon {
+    transform: translate(2px, -2px);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+@media (max-width: 1100px) {
+    .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .member-card {
+        padding: 28px 20px 24px;
+    }
+
+    .member-image-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .member-card h3 {
+        font-size: 1.15rem;
+    }
+}
+```
 
 /* ========================================
    PROJECTS SECTION
