@@ -1536,82 +1536,248 @@ nav {
     }
 }
 
-/* ==================== CONTACT SECTION ==================== */
-#contact {
+/* Contact Grid */
+.section-contact .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Contact Cards */
+.section-contact .contact-card {
+    min-width: 0;
+    min-height: 0;
+    padding: 36px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid rgba(96, 108, 56, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(32, 44, 19, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-contact .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(32, 44, 19, 0.1);
+}
+
+/* Member Initials */
+.section-contact .member-avatar {
+    width: 76px;
+    height: 76px;
+    min-width: 76px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #283618, #606c38);
+    color: #ffffff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+/* Member Names */
+.section-contact .contact-card h3 {
+    margin: 0 0 8px;
+    color: #1e2913;
+    font-family: 'Outfit', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+/* Member Roles */
+.section-contact .contact-role {
+    min-height: 48px;
+    margin: 0 0 18px;
+    color: #56614c;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Email Button */
+.section-contact .contact-link {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    margin: 0 0 18px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1px solid #e3e0cc;
+    border-radius: 12px;
+    background: #fbf8ed;
+    color: #56614c;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.section-contact .contact-link svg {
+    flex-shrink: 0;
+}
+
+.section-contact .contact-link span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* LinkedIn Button — FIXED */
+.section-contact .linkedin-button {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+    margin-top: auto;
+    padding: 10px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    overflow: hidden;
+    border: none;
+    border-radius: 999px;
+    background: #606c38;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.section-contact .linkedin-button svg {
+    display: block;
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.section-contact .linkedin-button span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.section-contact .linkedin-button:hover {
+    background: #283618;
+    transform: translateY(-2px);
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .section-contact .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 800px;
+    }
+
+    .section-contact .contact-card {
+        padding: 30px 24px;
+    }
+
+    .section-contact .contact-card h3 {
+        font-size: 23px;
+    }
+
+    .section-contact .contact-link,
+    .section-contact .linkedin-button {
+        font-size: 13px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .section-contact .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+    }
+}
+
+.section-contact {
+    background-color: #e8eee0 !important;
+    width: 100%;
+}
+
+.section-contact .section-container {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 55px 5% 45px;
+}
+
+.section-contact .section-header {
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 65px !important;
+    text-align: center !important;
+}
+
+.section-contact .section-tag {
+    display: block;
+    margin: 0 auto 25px;
     text-align: center;
 }
 
-.contact-intro {
-    max-width: 650px;
-    margin: 0 auto 35px;
+.section-contact .section-header h2 {
+    margin: 0 auto 25px !important;
+    text-align: center !important;
 }
 
-.contact-grid {
+.section-contact .section-intro {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center !important;
+}
+
+.section-contact .contact-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    max-width: 700px;
-    margin: auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
-.contact-card {
-    padding: 28px 22px;
-    background-color: white;
-    border: 2px solid #606c38;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(40, 54, 24, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+.section-contact .contact-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
 }
 
-.contact-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 14px 28px rgba(40, 54, 24, 0.28);
+@media (max-width: 1100px) {
+    .section-contact .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
-.member-avatar {
-    display: grid;
-    place-items: center;
-    width: 62px;
-    height: 62px;
-    margin: 0 auto 14px;
-    border-radius: 50%;
-    background-color: #606c38;
-    color: #f8f1c9;
-    font-size: 19px;
-    font-weight: bold;
-}
+@media (max-width: 600px) {
+    .section-contact .section-container {
+        padding: 45px 20px;
+    }
 
-.contact-card h3 {
-    margin: 0 0 14px;
-    color: #283618;
-}
+    .section-contact .contact-grid {
+        grid-template-columns: 1fr;
+    }
 
-.contact-link {
-    display: block;
-    margin-bottom: 16px;
-    color: #606c38;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-}
-
-.contact-link:hover {
-    color: #283618;
-    text-decoration: underline;
-}
-
-.linkedin-button {
-    display: inline-block;
-    padding: 10px 16px;
-    border-radius: 5px;
-    background-color: #606c38;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-
-.linkedin-button:hover {
-    background-color: #283618;
+    .section-contact .section-header {
+        margin-bottom: 35px !important;
+    }
 }
 
 /* ==================== FOOTER ==================== */
